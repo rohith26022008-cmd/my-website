@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- =========================
+         BASIC SEO
+    ========================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ROHITH R | Official — Filmmaker, Director & Web Developer</title>
+
+    <meta name="description"
+          content="Official portfolio of Rohith R — aspiring filmmaker, director, story writer, programmer and web developer.">
+
+    <meta name="keywords"
+          content="Rohith R, Rohith R Official, filmmaker, director, story writer, web developer, programmer, Chennai, computer science">
+
+    <meta name="author" content="Rohith R">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+          content="ROHITH R | Official">
+
+    <meta property="og:description"
+          content="Filmmaker, Director, Story Writer & Technology Professional">
+
+    <meta property="og:type" content="website">
+
+    <!-- Replace this with your actual website URL after publishing -->
+    <meta property="og:url" content="https://yourwebsite.com/">
+
+    <!-- =========================
+         FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        /* =========================================================
+           LOADING SCREEN
+        ========================================================== */
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #030303;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            letter-spacing: 6px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .loader-line {
+            width: 180px;
+            height: 2px;
+            background: #333;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .loader-line::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            animation: loading 1.3s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(300%);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================================
+           BACKGROUND EFFECTS
+        ========================================================== */
+
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -3;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 60px 60px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 85%
+            );
+        }
+
+        .ambient-light {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+
+            background: radial-gradient(
+                circle,
+                rgba(255,255,255,0.07),
+                transparent 65%
+            );
+
+            filter: blur(50px);
+            transform: translate(-50%, -50%);
+        }
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            background: rgba(5,5,5,0.65);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        nav {
+            width: min(1200px, 92%);
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            opacity: 0.45;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #aaa;
+            font-size: 0.85rem;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           GENERAL SECTION
+        ========================================================== */
+
+        section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 120px 0;
+        }
+
+        .section-label {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #777;
+        }
+
+        .section-description {
+            max-width: 720px;
+            color: #999;
+            font-size: 1rem;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        #home {
+            min-height: 100vh;
+            width: 100%;
+            padding: 150px 4% 80px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            width: min(1200px, 100%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-small {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .hero-title .outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #777;
+        }
+
+        .hero-subtitle {
+            margin-top: 30px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #aaa;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 24px;
+
+            border: 1px solid #444;
+            border-radius: 4px;
+
+            font-size: 0.85rem;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            border-color: white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Profile */
+
+        .profile-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-frame {
+            width: min(380px, 80vw);
+            aspect-ratio: 1 / 1;
+
+            border: 1px solid #333;
+            padding: 12px;
+
+            transform: rotate(3deg);
+
+            position: relative;
+        }
+
+        .profile-frame::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+
+            border: 1px solid #222;
+
+            transform: rotate(-6deg);
+            z-index: -1;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #181818,
+                    #050505
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+
+        .photo-placeholder strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .photo-placeholder small {
+            color: #444;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: #666;
+
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
+        }
+
+        /* =========================================================
+           ABOUT
+        ========================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .about-highlight {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #555;
+
+            color: #ccc;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* =========================================================
+           SKILLS
+        ========================================================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .skill-card {
+            padding: 30px;
+
+            border: 1px solid #1e1e1e;
+            background: rgba(255,255,255,0.015);
+
+            transition: 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #555;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .skill-number {
+            font-family: "Orbitron", sans-serif;
+            color: #444;
+            font-size: 0.75rem;
+        }
+
+        .skill-name {
+            font-size: 1.15rem;
+            margin-top: 30px;
+        }
+
+        .skill-type {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 7px;
+        }
+
+        /* =========================================================
+           CINEMA SECTION
+        ========================================================== */
+
+        .cinema-section {
+            position: relative;
+        }
+
+        .cinema-box {
+            margin-top: 55px;
+
+            min-height: 480px;
+
+            border: 1px solid #292929;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(255,255,255,0.08),
+                    transparent 40%
+                ),
+                #080808;
+        }
+
+        .cinema-visual {
+            position: relative;
+            min-height: 480px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .film-reel {
+            width: 240px;
+            height: 240px;
+
+            border: 3px solid #333;
+            border-radius: 50%;
+
+            position: relative;
+
+            animation: rotateReel 18s linear infinite;
+        }
+
+        .film-reel::before,
+        .film-reel::after {
+            content: "";
+
+            position: absolute;
+            inset: 30px;
+
+            border: 2px solid #292929;
+            border-radius: 50%;
+        }
+
+        .film-reel::after {
+            inset: 95px;
+            background: #111;
+        }
+
+        @keyframes rotateReel {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cinema-info {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-status {
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 7px 12px;
+
+            border: 1px solid #333;
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1;
+        }
+
+        .project-description {
+            color: #888;
+            margin-top: 25px;
+            max-width: 500px;
+        }
+
+        /* =========================================================
+           PROJECT CARDS
+        ========================================================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            min-height: 300px;
+
+            padding: 35px;
+
+            border: 1px solid #222;
+            background: linear-gradient(
+                145deg,
+                #0d0d0d,
+                #070707
+            );
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #444;
+        }
+
+        .project-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -80px;
+            bottom: -80px;
+
+            border: 1px solid #222;
+            border-radius: 50%;
+        }
+
+        .project-icon {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            color: #555;
+        }
+
+        .project-card h3 {
+            margin-top: 30px;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            margin-top: 12px;
+            color: #777;
+            max-width: 500px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 20px;
+
+            color: #555;
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           INTERNSHIP
+        ========================================================== */
+
+        .timeline {
+            margin-top: 60px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 1px solid #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 60px 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -36px;
+            top: 4px;
+
+            width: 10px;
+            height: 10px;
+
+            background: #050505;
+            border: 1px solid #888;
+
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .timeline-title {
+            margin-top: 12px;
+            font-size: 1.5rem;
+        }
+
+        .timeline-company {
+            margin-top: 5px;
+            color: #888;
+        }
+
+        .timeline-description {
+            margin-top: 15px;
+            color: #777;
+            max-width: 750px;
+        }
+
+        /* =========================================================
+           CERTIFICATES
+        ========================================================== */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            min-height: 180px;
+            padding: 28px;
+
+            border: 1px solid #222;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            transition: 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: #555;
+        }
+
+        .cert-card h3 {
+            font-size: 1rem;
+        }
+
+        .cert-card p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* =========================================================
+           CAREER VISION
+        ========================================================== */
+
+        .vision {
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+
+            padding: 90px 0;
+        }
+
+        .vision-text {
+            max-width: 950px;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: clamp(1.7rem, 4vw, 3.5rem);
+
+            line-height: 1.25;
+        }
+
+        .vision-text span {
+            color: #555;
+        }
+
+        /* =========================================================
+           SOCIAL
+        ========================================================== */
+
+        .social-grid {
+            margin-top: 50px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .social-card {
+            padding: 25px;
+
+            border: 1px solid #222;
+
+            transition: 0.3s ease;
+        }
+
+        .social-card:hover {
+            border-color: #666;
+            transform: translateY(-5px);
+        }
+
+        .social-name {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .social-handle {
+            color: #666;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================== */
+
+        .contact-box {
+            margin-top: 50px;
+
+            padding: 70px;
+
+            border: 1px solid #222;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.05),
+                    transparent 60%
+                );
+        }
+
+        .contact-box h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+
+        .contact-box p {
+            max-width: 650px;
+            margin: 20px auto 30px;
+
+            color: #777;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+            border-top: 1px solid #1a1a1a;
+
+            padding: 40px 4%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #555;
+
+            font-size: 0.75rem;
+        }
+
+        .footer-logo {
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: rgba(5,5,5,0.96);
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                gap: 20px;
+
+                transform: translateY(-150%);
+                transition: 0.4s ease;
+
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-wrapper {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cinema-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cinema-visual {
+                min-height: 350px;
+            }
+
+            .cinema-info {
+                padding: 40px;
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+            #home {
+                padding: 130px 6% 70px;
+            }
+
+            .hero-title {
+                font-size: 3.1rem;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid,
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 40px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         LOADER
+    ========================================================== -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                ROHITH R
+            </div>
+
+            <div class="loader-line"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Background -->
+
+    <div class="background-grid"></div>
+
+    <div class="ambient-light" id="ambientLight"></div>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#home" class="logo">
+                ROHITH <span>R</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#filmmaking">Film</a>
+                </li>
+
+                <li>
+                    <a href="#technology">Technology</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section id="home">
+
+            <div class="hero-container">
+
+                <div class="hero-content reveal">
+
+                    <div class="hero-small">
+                        ROHITH R | OFFICIAL
+                    </div>
+
+                    <h1 class="hero-title">
+
+                        CREATE.<br>
+
+                        <span class="outline">CODE.</span><br>
+
+                        DIRECT.
+
+                    </h1>
+
+                    <p class="hero-subtitle">
+
+                        Aspiring Filmmaker, Director, Story Writer
+                        & Technology Professional building a career
+                        where creativity meets technology.
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#about" class="btn btn-primary">
+                            Explore My Journey
+                        </a>
+
+                        <a href="#contact" class="btn">
+                            Connect
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="profile-wrapper reveal">
+
+                    <div class="profile-frame">
+
+                        <div class="profile-photo">
+
+                            <img src="profile.jpg" alt="Rohith R">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-scroll">
+                SCROLL TO EXPLORE
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="section-label reveal">
+                01 / ABOUT
+            </div>
+
+            <h2 class="section-title reveal">
+                A CREATIVE MIND
+                <span>WITH A TECHNICAL EDGE.</span>
+            </h2>
+
+            <div class="about-grid">
+
+                <div class="about-highlight reveal">
+
+                    Technology gives me
+                    the tools.
+
+                    <br><br>
+
+                    Storytelling gives me
+                    the reason to create.
+
+                </div>
+
+
+                <div class="about-text reveal">
+
+                    <p>
+                        Hi, I'm <strong>Rohith R.</strong>
+                    </p>
+
+                    <p>
+                        I'm an aspiring filmmaker, director,
+                        story writer, and technology professional
+                        building my career through creativity,
+                        technical skills, and continuous learning.
+                    </p>
+
+                    <p>
+                        I'm passionate about storytelling,
+                        screenplay development, filmmaking,
+                        directing, and technology while actively
+                        developing my programming skills in
+                        Python, Java, JavaScript, C, and C++.
+                    </p>
+
+                    <p>
+                        I believe in transforming ideas into
+                        meaningful projects and continuously
+                        challenging myself to learn, create,
+                        and improve.
+                    </p>
+
+                    <p>
+                        My ambition is to build a strong
+                        professional career where technology
+                        and creativity come together.
+                    </p>
+
+                    <div class="quote">
+
+                        "I'm not just learning skills —
+                        I'm building the foundation for
+                        what I want to create."
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section id="skills">
+
+            <div class="section-label reveal">
+                02 / SKILLS
+            </div>
+
+            <h2 class="section-title reveal">
+                TOOLS I USE TO
+                <span>BUILD & CREATE.</span>
+            </h2>
+
+            <p class="section-description reveal">
+
+                Continuously developing my technical skills
+                while expanding my creative capabilities.
+
+            </p>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        01
+                    </div>
+
+                    <div class="skill-name">
+                        Python
+                    </div>
+
+                    <div class="skill-type">
+                        Programming
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        02
+                    </div>
+
+                    <div class="skill-name">
+                        Java
+                    </div>
+
+                    <div class="skill-type">
+                        Programming
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        03
+                    </div>
+
+                    <div class="skill-name">
+                        JavaScript
+                    </div>
+
+                    <div class="skill-type">
+                        Web Development
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        04
+                    </div>
+
+                    <div class="skill-name">
+                        C
+                    </div>
+
+                    <div class="skill-type">
+                        Programming
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        05
+                    </div>
+
+                    <div class="skill-name">
+                        C++
+                    </div>
+
+                    <div class="skill-type">
+                        Programming
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        06
+                    </div>
+
+                    <div class="skill-name">
+                        HTML / CSS
+                    </div>
+
+                    <div class="skill-type">
+                        Web Development
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        07
+                    </div>
+
+                    <div class="skill-name">
+                        SQL
+                    </div>
+
+                    <div class="skill-type">
+                        Database
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        08
+                    </div>
+
+                    <div class="skill-name">
+                        Story Writing
+                    </div>
+
+                    <div class="skill-type">
+                        Creative
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-number">
+                        09
+                    </div>
+
+                    <div class="skill-name">
+                        Direction
+                    </div>
+
+                    <div class="skill-type">
+                        Filmmaking
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FILMMAKING
+        ====================================================== -->
+
+        <section id="filmmaking" class="cinema-section">
+
+            <div class="section-label reveal">
+                03 / FILMMAKING
+            </div>
+
+            <h2 class="section-title reveal">
+                WHERE IDEAS BECOME
+                <span>STORIES.</span>
+            </h2>
+
+            <p class="section-description reveal">
+
+                Filmmaking is one of the core creative directions
+                I am developing alongside my technology career.
+
+            </p>
+
+
+            <div class="cinema-box reveal">
+
+                <div class="cinema-visual">
+
+                    <div class="film-reel"></div>
+
+                </div>
+
+
+                <div class="cinema-info">
+
+                    <div class="project-status">
+                        PROJECT IN DEVELOPMENT
+                    </div>
+
+                    <h3 class="project-title">
+                        THE VOICE<br>
+                        OF MYSTERY
+                    </h3>
+
+                    <p class="project-description">
+
+                        An upcoming film project currently in
+                        development. More details will be revealed
+                        as the project progresses.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FILM PROJECTS
+        ====================================================== -->
+
+        <section>
+
+            <div class="section-label reveal">
+                04 / CREATIVE WORK
+            </div>
+
+            <h2 class="section-title reveal">
+                FILMMAKING &
+                <span>STORYTELLING.</span>
+            </h2>
+
+
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        The Voice Of Mystery
+                    </h3>
+
+                    <p>
+                        An original film project currently
+                        under development.
+                    </p>
+
+                    <span class="coming-soon">
+                        IN DEVELOPMENT
+                    </span>
+
+                </div>
+
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Short Films
+                    </h3>
+
+                    <p>
+                        Short-film projects, filmmaking
+                        experiments, and future releases.
+                    </p>
+
+                    <span class="coming-soon">
+                        COMING SOON
+                    </span>
+
+                </div>
+
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Screenwriting
+                    </h3>
+
+                    <p>
+                        Original stories, screenplay development,
+                        scene construction, and creative writing.
+                    </p>
+
+                    <span class="coming-soon">
+                        DEVELOPING
+                    </span>
+
+                </div>
+
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        Direction
+                    </h3>
+
+                    <p>
+                        Exploring visual storytelling,
+                        direction, performance, and cinematic
+                        presentation.
+                    </p>
+
+                    <span class="coming-soon">
+                        BUILDING
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TECHNOLOGY
+        ====================================================== -->
+
+        <section id="technology">
+
+            <div class="section-label reveal">
+                05 / TECHNOLOGY
+            </div>
+
+            <h2 class="section-title reveal">
+                BUILDING WITH
+                <span>CODE.</span>
+            </h2>
+
+            <p class="section-description reveal">
+
+                Alongside filmmaking, I'm developing my career
+                in programming and web development.
+
+            </p>
+
+
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Building responsive websites and
+                        experimenting with modern web technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card reveal">
+
+                    <div class="project-icon">
+                        PY
+                    </div>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <p>
+                        Developing programming fundamentals
+                        using Python, Java, C, C++, and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTERNSHIP
+        ====================================================== -->
+
+        <section id="internship">
+
+            <div class="section-label reveal">
+                06 / EXPERIENCE
+            </div>
+
+            <h2 class="section-title reveal">
+                LEARNING THROUGH
+                <span>REAL PROJECTS.</span>
+            </h2>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-date">
+                        30-DAY INTERNSHIP
+                    </div>
+
+                    <h3 class="timeline-title">
+                        Web Development Intern
+                    </h3>
+
+                    <div class="timeline-company">
+                        Hykin Tech Software Academy
+                    </div>
+
+                    <p class="timeline-description">
+
+                        Completed a 30-day web development
+                        internship and worked on a webpage
+                        concept designed around awareness of
+                        reporting disturbances involving students
+                        and teachers.
+
+                        <br><br>
+
+                        The project explored how complaints could
+                        be communicated to appropriate authorities
+                        and how such issues could be addressed.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section id="education">
+
+            <div class="section-label reveal">
+                07 / EDUCATION
+            </div>
+
+            <h2 class="section-title reveal">
+                LEARNING &
+                <span>GROWING.</span>
+            </h2>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-date">
+                        CURRENTLY PURSUING
+                    </div>
+
+                    <h3 class="timeline-title">
+                        B.Sc. Computer Science
+                    </h3>
+
+                    <div class="timeline-company">
+                        SRM Institute of Science and Technology
+                        — Ramapuram Campus, Chennai
+                    </div>
+
+                    <p class="timeline-description">
+
+                        Currently pursuing my second year,
+                        third semester, while developing
+                        programming, web development, and
+                        creative skills.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CERTIFICATIONS
+        ====================================================== -->
+
+        <section id="certifications">
+
+            <div class="section-label reveal">
+                08 / ACHIEVEMENTS
+            </div>
+
+            <h2 class="section-title reveal">
+                CERTIFICATES &
+                <span>ACHIEVEMENTS.</span>
+            </h2>
+
+
+            <div class="cert-grid">
+
+                <div class="cert-card reveal">
+
+                    <h3>
+                        Web Development Internship
+                    </h3>
+
+                    <p>
+                        Hykin Tech Software Academy
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card reveal">
+
+                    <h3>
+                        School Volleyball
+                    </h3>
+
+                    <p>
+                        Volleyball achievement certificate
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card reveal">
+
+                    <h3>
+                        More Certificates
+                    </h3>
+
+                    <p>
+                        Additional achievements will be
+                        added here.
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card reveal">
+
+                    <h3>
+                        Programming Certification
+                    </h3>
+
+                    <p>
+                        Planned / upcoming — Full Stack
+                        programming certification.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CAREER VISION
+        ====================================================== -->
+
+        <section>
+
+            <div class="vision reveal">
+
+                <div class="section-label">
+                    09 / CAREER VISION
+                </div>
+
+                <div class="vision-text">
+
+                    Building a career where
+                    <span>technology</span>
+                    and
+                    <span>creativity</span>
+                    work together.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOCIAL
+        ====================================================== -->
+
+        <section id="social">
+
+            <div class="section-label reveal">
+                10 / CONNECT
+            </div>
+
+            <h2 class="section-title reveal">
+                FIND ME
+                <span>ONLINE.</span>
+            </h2>
+
+
+            <div class="social-grid">
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/in/rohith-r-4872b4387"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card reveal"
+                >
+
+                    <div class="social-name">
+                        LinkedIn
+                    </div>
+
+                    <div class="social-handle">
+                        Professional Profile ↗
+                    </div>
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/_lovely._rohith_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card reveal"
+                >
+
+                    <div class="social-name">
+                        Instagram
+                    </div>
+
+                    <div class="social-handle">
+                        @_lovely._rohith_ ↗
+                    </div>
+
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <div class="social-card reveal">
+
+                    <div class="social-name">
+                        YouTube
+                    </div>
+
+                    <div class="social-handle">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+
+                <!-- GITHUB -->
+
+                <div class="social-card reveal">
+
+                    <div class="social-name">
+                        GitHub
+                    </div>
+
+                    <div class="social-handle">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact">
+
+            <div class="section-label reveal">
+                11 / CONTACT
+            </div>
+
+            <div class="contact-box reveal">
+
+                <h3>
+                    LET'S CONNECT.
+                </h3>
+
+                <p>
+
+                    For professional opportunities,
+                    collaborations, filmmaking projects,
+                    technology projects, or creative work,
+                    connect with me through my professional
+                    social profiles.
+
+                </p>
+
+                <div class="hero-buttons"
+                     style="justify-content:center;">
+
+                    <a
+                        href="https://www.linkedin.com/in/rohith-r-4872b4387"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/_lovely._rohith_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn"
+                    >
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ROHITH R | OFFICIAL
+        </div>
+
+        <div>
+            © <span id="year"></span> Rohith R. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =====================================================
+           LOADER
+        ====================================================== */
+
+        window.addEventListener("load", function () {
+
+            const loader = document.getElementById("loader");
+
+            setTimeout(() => {
+
+                loader.classList.add("hide");
+
+            }, 700);
+
+        });
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            if (navLinks.classList.contains("active")) {
+                menuBtn.textContent = "✕";
+            } else {
+                menuBtn.textContent = "☰";
+            }
+
+        });
+
+
+        /* Close mobile menu when clicking a link */
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuBtn.textContent = "☰";
+
+            });
+
+        });
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =====================================================
+           AMBIENT MOUSE LIGHT
+        ====================================================== */
+
+        const ambientLight =
+            document.getElementById("ambientLight");
+
+        document.addEventListener("mousemove", (event) => {
+
+            ambientLight.style.left =
+                event.clientX + "px";
+
+            ambientLight.style.top =
+                event.clientY + "px";
+
+        });
+
+
+        /* =====================================================
+           CURRENT YEAR
+        ====================================================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        /* =====================================================
+           ACTIVE NAVIGATION
+        ====================================================== */
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navItems =
+            document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+                if (window.scrollY >= sectionTop) {
+
+                    current = section.getAttribute("id");
+
+                }
+
+            });
+
+
+            navItems.forEach(link => {
+
+                link.style.color = "#aaa";
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.style.color = "#fff";
+
+                }
+
+            });
+
+        });
+
+
+        /* =====================================================
+           PREVENT EMPTY PLACEHOLDER LINKS
+        ====================================================== */
+
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+
+            link.addEventListener("click", function(event) {
+
+                event.preventDefault();
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- =========================================================
+         STRUCTURED DATA FOR SEARCH ENGINES
+    ========================================================== -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+
+        "name": "Rohith R",
+
+        "jobTitle":
+            "Aspiring Filmmaker, Director, Story Writer & Web Developer",
+
+        "url":
+            "https://yourwebsite.com/",
+
+        "sameAs": [
+            "https://www.linkedin.com/in/rohith-r-4872b4387",
+            "https://www.instagram.com/_lovely._rohith_/"
+        ],
+
+        "knowsAbout": [
+            "Filmmaking",
+            "Film Direction",
+            "Story Writing",
+            "Screenwriting",
+            "Web Development",
+            "Python",
+            "Java",
+            "JavaScript",
+            "C",
+            "C++",
+            "HTML",
+            "CSS",
+            "SQL"
+        ]
+    }
+
+    </script>
+
+</body>
+</html>
