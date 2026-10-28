@@ -1,0 +1,1097 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Certificates &amp; Digital Badges | Rohith R</title><meta name="description" content="Explore professional certificates and digital badges earned by Rohith R in Python, data science, Google Analytics, cybersecurity awareness, AI literacy and web development."><meta name="keywords" content="Rohith R certificates, Python Essentials 1, data science and analytics certificate, Google Analytics certification 2026, cybersecurity awareness, AI foundations badge, HP LIFE Ambassador, Hykin web development internship"><meta name="author" content="Rohith R"><link rel="canonical" href="https://rohith26022008-cmd.github.io/my-website/certificates.html"><meta property="og:title" content="Certificates &amp; Digital Badges | Rohith R"><meta property="og:description" content="Professional learning achievements in Python, data science, analytics, cybersecurity, AI literacy and web development."><meta property="og:type" content="website"><meta property="og:url" content="https://rohith26022008-cmd.github.io/my-website/certificates.html"><meta property="og:image" content="https://rohith26022008-cmd.github.io/my-website/images/python-essentials-1.png"><link rel="icon" href="favicon.ico"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        /* =========================================================
+           LOADING SCREEN
+        ========================================================== */
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #030303;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            letter-spacing: 6px;
+            animation: pulse 1.5s infinite;
+        }
+        .certificate-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .certificate-link:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .loader-line {
+            width: 180px;
+            height: 2px;
+            background: #333;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .loader-line::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            animation: loading 1.3s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(300%);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================================
+           BACKGROUND EFFECTS
+        ========================================================== */
+
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -3;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 60px 60px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 85%
+            );
+        }
+
+        .ambient-light {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+
+            background: radial-gradient(
+                circle,
+                rgba(255,255,255,0.07),
+                transparent 65%
+            );
+
+            filter: blur(50px);
+            transform: translate(-50%, -50%);
+        }
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            background: rgba(5,5,5,0.65);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        nav {
+            width: min(1200px, 92%);
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            opacity: 0.45;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: #aaa;
+            font-size: 0.85rem;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           GENERAL SECTION
+        ========================================================== */
+
+        section {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 120px 0;
+        }
+
+        .section-label {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #777;
+        }
+
+        .section-description {
+            max-width: 720px;
+            color: #999;
+            font-size: 1rem;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================== */
+
+        #home {
+            min-height: 100vh;
+            width: 100%;
+            padding: 150px 4% 80px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            width: min(1200px, 100%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-small {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .hero-title .outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #777;
+        }
+
+        .hero-subtitle {
+            margin-top: 30px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #aaa;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 24px;
+
+            border: 1px solid #444;
+            border-radius: 4px;
+
+            font-size: 0.85rem;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            border-color: white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Profile */
+
+        .profile-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-frame {
+            width: min(380px, 80vw);
+            aspect-ratio: 1 / 1;
+
+            border: 1px solid #333;
+            padding: 12px;
+
+            transform: rotate(3deg);
+
+            position: relative;
+        }
+
+        .profile-frame::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+
+            border: 1px solid #222;
+
+            transform: rotate(-6deg);
+            z-index: -1;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #181818,
+                    #050505
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+
+        .photo-placeholder strong {
+            display: block;
+            font-family: "Orbitron", sans-serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .photo-placeholder small {
+            color: #444;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: #666;
+
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
+        }
+
+        /* =========================================================
+           ABOUT
+        ========================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .about-highlight {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            margin-top: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #555;
+
+            color: #ccc;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* =========================================================
+           SKILLS
+        ========================================================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .skill-card {
+            padding: 30px;
+
+            border: 1px solid #1e1e1e;
+            background: rgba(255,255,255,0.015);
+
+            transition: 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #555;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .skill-number {
+            font-family: "Orbitron", sans-serif;
+            color: #444;
+            font-size: 0.75rem;
+        }
+
+        .skill-name {
+            font-size: 1.15rem;
+            margin-top: 30px;
+        }
+
+        .skill-type {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 7px;
+        }
+
+        /* =========================================================
+           CINEMA SECTION
+        ========================================================== */
+
+        .cinema-section {
+            position: relative;
+        }
+
+        .cinema-box {
+            margin-top: 55px;
+
+            min-height: 480px;
+
+            border: 1px solid #292929;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(255,255,255,0.08),
+                    transparent 40%
+                ),
+                #080808;
+        }
+
+        .cinema-visual {
+            position: relative;
+            min-height: 480px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .film-reel {
+            width: 240px;
+            height: 240px;
+
+            border: 3px solid #333;
+            border-radius: 50%;
+
+            position: relative;
+
+            animation: rotateReel 18s linear infinite;
+        }
+
+        .film-reel::before,
+        .film-reel::after {
+            content: "";
+
+            position: absolute;
+            inset: 30px;
+
+            border: 2px solid #292929;
+            border-radius: 50%;
+        }
+
+        .film-reel::after {
+            inset: 95px;
+            background: #111;
+        }
+
+        @keyframes rotateReel {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cinema-info {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-status {
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 7px 12px;
+
+            border: 1px solid #333;
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1;
+        }
+
+        .project-description {
+            color: #888;
+            margin-top: 25px;
+            max-width: 500px;
+        }
+
+        /* =========================================================
+           PROJECT CARDS
+        ========================================================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            min-height: 300px;
+
+            padding: 35px;
+
+            border: 1px solid #222;
+            background: linear-gradient(
+                145deg,
+                #0d0d0d,
+                #070707
+            );
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #444;
+        }
+
+        .project-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -80px;
+            bottom: -80px;
+
+            border: 1px solid #222;
+            border-radius: 50%;
+        }
+
+        .project-icon {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2rem;
+            color: #555;
+        }
+
+        .project-card h3 {
+            margin-top: 30px;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            margin-top: 12px;
+            color: #777;
+            max-width: 500px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 20px;
+
+            color: #555;
+
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           INTERNSHIP
+        ========================================================== */
+
+        .timeline {
+            margin-top: 60px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 1px solid #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 60px 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -36px;
+            top: 4px;
+
+            width: 10px;
+            height: 10px;
+
+            background: #050505;
+            border: 1px solid #888;
+
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .timeline-title {
+            margin-top: 12px;
+            font-size: 1.5rem;
+        }
+
+        .timeline-company {
+            margin-top: 5px;
+            color: #888;
+        }
+
+        .timeline-description {
+            margin-top: 15px;
+            color: #777;
+            max-width: 750px;
+        }
+
+        /* =========================================================
+           CERTIFICATES
+        ========================================================== */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            min-height: 180px;
+            padding: 28px;
+
+            border: 1px solid #222;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            transition: 0.3s ease;
+        }
+
+        .cert-card:hover {
+            border-color: #555;
+        }
+
+        .cert-card h3 {
+            font-size: 1rem;
+        }
+
+        .cert-card p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* =========================================================
+           CAREER VISION
+        ========================================================== */
+
+        .vision {
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+
+            padding: 90px 0;
+        }
+
+        .vision-text {
+            max-width: 950px;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: clamp(1.7rem, 4vw, 3.5rem);
+
+            line-height: 1.25;
+        }
+
+        .vision-text span {
+            color: #555;
+        }
+
+        /* =========================================================
+           SOCIAL
+        ========================================================== */
+
+        .social-grid {
+            margin-top: 50px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .social-card {
+            padding: 25px;
+
+            border: 1px solid #222;
+
+            transition: 0.3s ease;
+        }
+
+        .social-card:hover {
+            border-color: #666;
+            transform: translateY(-5px);
+        }
+
+        .social-name {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .social-handle {
+            color: #666;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================== */
+
+        .contact-box {
+            margin-top: 50px;
+
+            padding: 70px;
+
+            border: 1px solid #222;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.05),
+                    transparent 60%
+                );
+        }
+
+        .contact-box h3 {
+            font-family: "Orbitron", sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+
+        .contact-box p {
+            max-width: 650px;
+            margin: 20px auto 30px;
+
+            color: #777;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+            border-top: 1px solid #1a1a1a;
+
+            padding: 40px 4%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #555;
+
+            font-size: 0.75rem;
+        }
+
+        .footer-logo {
+            font-family: "Orbitron", sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: rgba(5,5,5,0.96);
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                gap: 20px;
+
+                transform: translateY(-150%);
+                transition: 0.4s ease;
+
+                border-bottom: 1px solid #222;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-wrapper {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cinema-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cinema-visual {
+                min-height: 350px;
+            }
+
+            .cinema-info {
+                padding: 40px;
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+            #home {
+                padding: 130px 6% 70px;
+            }
+
+            .hero-title {
+                font-size: 3.1rem;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid,
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 40px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+    
+.achievement-heading{padding-top:145px;padding-bottom:20px}.cert-card .btn{font-size:.78rem}@media(max-width:600px){.achievement-heading{padding-top:125px}}</style></head><body><div class="background-grid"></div><div class="ambient-light" id="ambientLight"></div><header><nav><a class="logo" href="index.html">ROHITH <span>R</span></a><a href="index.html#certifications" class="btn">← Back to Website</a></nav></header><main>
+<section class="achievement-heading"><div class="section-label reveal">ROHITH R / ACHIEVEMENTS</div><h1 class="section-title reveal">CERTIFICATES &amp; <span>DIGITAL BADGES.</span></h1><p class="section-description reveal">My professional learning, certificates and digital achievements.</p></section>
+<section style="padding-top:25px"><div class="section-label reveal">01 / CERTIFICATES</div><div class="cert-grid">
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/python-essentials-1.png" alt="Cisco Python Essentials 1 certificate" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Cisco Python Essentials 1</h3><p>Cisco Networking Academy</p><p>Builds a foundation in Python programming, including core syntax, data types, control flow and introductory problem solving.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/python-essentials-1.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/data-science-and-analytics.png" alt="Data Science and Analytics certificate" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Data Science &amp; Analytics</h3><p>Certificate</p><p>Recognizes learning in data science and analytics concepts, with an emphasis on interpreting data and developing evidence-based insights.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/data-science-and-analytics.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/google-analytics-certification-2026.png" alt="Google Analytics certificate 2026" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Google Analytics</h3><p>2026 Certificate</p><p>Demonstrates learning in digital measurement and analytics, using website data to understand audiences and performance.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/google-analytics-certification-2026.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/introduction-to-cybersecurity-awareness.png" alt="Introduction to Cybersecurity Awareness certificate" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Introduction to Cybersecurity Awareness</h3><p>Certificate</p><p>Develops awareness of common online security risks and practical habits for safer use of digital services.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/introduction-to-cybersecurity-awareness.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/critical-thinking-in-the-ai-era.png" alt="Critical Thinking in the AI Era certificate" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Critical Thinking in the AI Era</h3><p>Certificate</p><p>Focuses on evaluating AI-generated information, applying sound judgment and using AI thoughtfully and responsibly.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/critical-thinking-in-the-ai-era.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/hykin-internship-certificate.png" alt="Hykin Tech Software Academy Web Development internship certificate awarded to Rohith R" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Web Development Internship</h3><p>Hykin Tech Software Academy | 1-30 June 2026</p><p>Completed a 30-day internship focused on web development and a project concept designed to raise awareness of student safety reporting.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/hykin-internship-certificate.png" target="_blank" rel="noopener noreferrer">View Certificate ↗</a></article>
+</div></section>
+<section style="padding-top:20px"><div class="section-label reveal">02 / DIGITAL BADGES</div><div class="cert-grid">
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/openai-applied-ai-foundations.png" alt="OpenAI Academy Applied AI Foundations badge" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>Applied AI Foundations</h3><p>OpenAI Academy</p><p>Recognizes foundational learning in applied artificial intelligence and key concepts for understanding AI systems.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/openai-applied-ai-foundations.png" target="_blank" rel="noopener noreferrer">View Badge ↗</a></article>
+<article class="cert-card reveal" style="gap:14px;min-height:280px"><img src="images/hp-life-ambassador-badge-2026.avif" alt="HP LIFE Ambassador badge 2026" style="width:100%;height:180px;object-fit:contain;background:#111"><h3>HP LIFE Ambassador</h3><p>2026 Digital Badge</p><p>Recognizes participation in the HP LIFE Ambassador community and support for learning and digital skills development.</p><a class="btn" style="align-self:flex-start;margin-top:auto" href="images/hp-life-ambassador-badge-2026.avif" target="_blank" rel="noopener noreferrer">View Badge ↗</a></article>
+</div></section>
+</main><footer><div class="footer-logo">ROHITH R | OFFICIAL</div><div>© <span id="year"></span> Rohith R. All rights reserved.</div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('active');revealObserver.unobserve(entry.target)}})},{threshold:0.12});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));const ambientLight=document.getElementById('ambientLight');document.addEventListener('mousemove',event=>{ambientLight.style.left=event.clientX+'px';ambientLight.style.top=event.clientY+'px'});</script></body></html>
+
+
